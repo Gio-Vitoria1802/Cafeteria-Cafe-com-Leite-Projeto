@@ -1,6 +1,5 @@
 /*  CAFÉ COM LEITE */
 :root {
- 
   --color-primary: #6f4e37; 
   --color-secondary: #c19a6b; 
   --color-accent: #deb887; 
@@ -10,7 +9,6 @@
   --color-success: #4caf50;
   --color-danger: #e63946;
 
-  
   --font-sm: 0.875rem;
   --font-base: 1rem;
   --font-lg: 1.25rem;
@@ -25,7 +23,7 @@
   --space-6: 64px;
 }
 
-/*  🌐 LAYOUT GLOBAL */
+/* LAYOUT GLOBAL */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -39,7 +37,6 @@ body {
   grid-template-columns: repeat(12, 1fr);
   gap: var(--space-2);
   min-height: 100vh;
-
   margin: 0;
   padding: 0;
   background-color: var(--color-bg);
@@ -67,25 +64,24 @@ main {
 }
 
 .hero {
-    text-align: center;
-    color: #6f4e37;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: #6f4e37;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .hero2 {
-     text-align: center;
-     color: #6f4e37;
-     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     
-    
+  text-align: center;
+  color: #6f4e37;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 footer {
   text-align: center;
   font-size: var(--font-sm);
   margin-top: var(--space-3);
 }
 
-/*  NAVEGAÇÃO*/
+/*  NAVEGAÇÃO */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -115,6 +111,15 @@ footer {
   color: var(--color-accent);
 }
 
+/* Hamburger para mobile */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
 
 /*  SEÇÕES */
 .hero {
@@ -155,7 +160,7 @@ footer {
   cursor: not-allowed;
 }
 
-/* CARDS (Menu)*/
+/* CARDS (Menu) */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -182,14 +187,13 @@ footer {
   margin-bottom: var(--space-2);
 }
 
-/* FORMULÁRIO DE CONTATO*/
+/* FORMULÁRIO DE CONTATO */
 form {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
   max-width: 600px;
   margin: auto;
-  
 }
 
 input,
@@ -228,14 +232,22 @@ input:valid {
   .menu {
     display: none;
     flex-direction: column;
+    gap: var(--space-2);
     background: var(--color-primary);
     width: 100%;
+    text-align: center;
   }
+
   .menu.active {
-    display: none;
+    display: flex;
   }
+
   .hamburger {
-    display: none;
+    display: block;
+  }
+
+  .menu li {
+    margin: var(--space-1) 0;
   }
 }
 
