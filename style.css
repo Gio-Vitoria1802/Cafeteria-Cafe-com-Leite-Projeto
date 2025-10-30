@@ -1,0 +1,259 @@
+/*  CAFÉ COM LEITE */
+:root {
+ 
+  --color-primary: #6f4e37; 
+  --color-secondary: #c19a6b; 
+  --color-accent: #deb887; 
+  --color-light: #f5f0e6; 
+  --color-cream: #fff8e7;
+  --color-dark: #3b2f2f;
+  --color-success: #4caf50;
+  --color-danger: #e63946;
+
+  
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+  --font-xxl: 2.5rem;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+}
+
+/*  🌐 LAYOUT GLOBAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-dark);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-2);
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  background-image: url(cafeteria\ fundo.jpg); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+
+header,
+footer {
+  grid-column: 1 / 13;
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--space-2);
+}
+
+main {
+  grid-column: 2 / 12;
+  padding: var(--space-4);
+  background: var(--color-cream);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.hero {
+    text-align: center;
+    color: #6f4e37;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.hero2 {
+     text-align: center;
+     color: #6f4e37;
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     
+    
+}
+footer {
+  text-align: center;
+  font-size: var(--font-sm);
+  margin-top: var(--space-3);
+}
+
+/*  NAVEGAÇÃO*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: var(--font-xl);
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: var(--space-3);
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: var(--color-accent);
+}
+
+
+/*  SEÇÕES */
+.hero {
+  text-align: center;
+  padding: var(--space-5) 0;
+}
+
+.hero h1 {
+  font-size: var(--font-xxl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.hero p {
+  font-size: var(--font-lg);
+  color: var(--color-dark);
+  margin-bottom: var(--space-3);
+}
+
+.btn {
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--color-accent);
+}
+
+.btn:disabled {
+  background: var(--color-light);
+  color: var(--color-dark);
+  cursor: not-allowed;
+}
+
+/* CARDS (Menu)*/
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-3);
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: var(--space-3);
+  text-align: center;
+  transition: transform 0.3s ease;
+  max-width: 600px;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: var(--space-2);
+}
+
+/* FORMULÁRIO DE CONTATO*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 600px;
+  margin: auto;
+  
+}
+
+input,
+textarea {
+  padding: var(--space-2);
+  border: 1px solid var(--color-secondary);
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--color-accent);
+}
+
+input:invalid {
+  border-color: var(--color-danger);
+}
+
+input:valid {
+  border-color: var(--color-success);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+  main {
+    grid-column: 1 / 13;
+    padding: var(--space-2);
+  }
+  .hero h1 {
+    font-size: var(--font-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: var(--color-primary);
+    width: 100%;
+  }
+  .menu.active {
+    display: none;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    grid-column: 1 / 13;
+  }
+}
+
+@media (max-width: 1280px) {
+  .hero h1 {
+    font-size: var(--font-xl);
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    max-width: 1400px;
+    margin: auto;
+  }
+}
