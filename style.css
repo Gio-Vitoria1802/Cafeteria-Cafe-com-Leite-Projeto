@@ -23,7 +23,7 @@
   --space-6: 64px;
 }
 
-/* LAYOUT GLOBAL */
+/*  🌐 LAYOUT GLOBAL */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,8 +37,6 @@ body {
   grid-template-columns: repeat(12, 1fr);
   gap: var(--space-2);
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
   background-color: var(--color-bg);
   background-image: url(cafeteria\ fundo.jpg); 
   background-size: cover; 
@@ -94,10 +92,12 @@ footer {
   font-weight: bold;
 }
 
+/* Menu corrigido: sempre visível */
 .menu {
   list-style: none;
   display: flex;
   gap: var(--space-3);
+  flex-wrap: wrap; /* permite quebrar em várias linhas no mobile */
 }
 
 .menu a {
@@ -111,19 +111,8 @@ footer {
   color: var(--color-accent);
 }
 
-/* Hamburger para mobile */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
 /*  SEÇÕES */
 .hero {
-  text-align: center;
   padding: var(--space-5) 0;
 }
 
@@ -230,20 +219,10 @@ input:valid {
 
 @media (max-width: 768px) {
   .menu {
-    display: none;
-    flex-direction: column;
-    gap: var(--space-2);
-    background: var(--color-primary);
+    flex-direction: column; /* itens em coluna no celular */
     width: 100%;
     text-align: center;
-  }
-
-  .menu.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
+    gap: var(--space-2);
   }
 
   .menu li {
